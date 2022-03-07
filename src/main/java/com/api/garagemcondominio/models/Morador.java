@@ -1,7 +1,9 @@
 package com.api.garagemcondominio.models;
 
+import java.io.Serializable;
 import java.util.UUID;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,13 +12,17 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_morador")
-public class Morador {
+public class Morador implements Serializable {
+	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private UUID id;
+	@Column(nullable = false)
 	private String nome;
+	@Column(nullable = false)
 	private String sobreNome;
+	@Column(nullable = false, unique = true)
 	private String cpf;
 	
 	public Morador() {
@@ -24,7 +30,6 @@ public class Morador {
 	}
 
 	public Morador(UUID id, String nome, String sobreNome, String cpf) {
-		super();
 		this.id = id;
 		this.nome = nome;
 		this.sobreNome = sobreNome;
