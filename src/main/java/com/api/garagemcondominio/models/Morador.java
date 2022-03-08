@@ -24,17 +24,6 @@ public class Morador implements Serializable {
 	private String sobreNome;
 	@Column(nullable = false, unique = true)
 	private String cpf;
-	
-	public Morador() {
-		
-	}
-
-	public Morador(UUID id, String nome, String sobreNome, String cpf) {
-		this.id = id;
-		this.nome = nome;
-		this.sobreNome = sobreNome;
-		this.cpf = cpf;
-	}
 
 	public UUID getId() {
 		return id;
