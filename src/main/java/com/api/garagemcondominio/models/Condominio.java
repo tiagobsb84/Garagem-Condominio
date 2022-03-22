@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Condominio {
@@ -16,6 +17,9 @@ public class Condominio {
 	private String apartamento;
 	private String bloco;
 	private String vaga;
+	
+	@ManyToOne
+	private Morador morador;
 	
 	public Condominio() {
 		
@@ -51,6 +55,10 @@ public class Condominio {
 
 	public void setVaga(String vaga) {
 		this.vaga = vaga;
+	}
+	
+	public Morador getMorador() {
+		return this.morador;
 	}
 
 	@Override

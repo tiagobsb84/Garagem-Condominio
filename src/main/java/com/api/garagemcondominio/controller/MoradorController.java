@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,5 +30,11 @@ public class MoradorController {
 		public List<CondominioDto> buscarCondominio(){
 			List<Condominio> condominio = condominioRepository.findAll();
 			return CondominioDto.converter(condominio);
+		}
+		
+		@GetMapping("/{id}")
+		public CondominioDto buscarUmCondominio(@PathVariable Long id) {
+			Condominio condominio = condominioRepository.getById(id);
+			return new CondominioDto(condominio);
 		}
 }

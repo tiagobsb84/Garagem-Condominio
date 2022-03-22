@@ -15,8 +15,11 @@ public class Morador implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
-	private String sobreNome;
 	private String cpf;
+	
+	public Morador() {
+		
+	}
 
 	public Long getId() {
 		return id;
@@ -32,14 +35,6 @@ public class Morador implements Serializable {
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-
-	public String getSobreNome() {
-		return sobreNome;
-	}
-
-	public void setSobreNome(String sobreNome) {
-		this.sobreNome = sobreNome;
 	}
 
 	public String getCpf() {
