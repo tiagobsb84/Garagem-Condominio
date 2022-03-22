@@ -1,9 +1,7 @@
 package com.api.garagemcondominio.models;
 
 import java.util.Objects;
-import java.util.UUID;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,27 +11,21 @@ import javax.persistence.Id;
 public class Condominio {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private UUID id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private String apartamento;
 	private String bloco;
-	private String numeroVaga;
+	private String vaga;
 	
 	public Condominio() {
 		
 	}
 
-	public Condominio(String apartamento, String bloco, String numeroVaga) {
-		this.apartamento = apartamento;
-		this.bloco = bloco;
-		this.numeroVaga = numeroVaga;
-	}
-
-	public UUID getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(UUID id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -53,12 +45,12 @@ public class Condominio {
 		this.bloco = bloco;
 	}
 
-	public String getNumeroVaga() {
-		return numeroVaga;
+	public String getVaga() {
+		return vaga;
 	}
 
-	public void setNumeroVaga(String numeroVaga) {
-		this.numeroVaga = numeroVaga;
+	public void setVaga(String vaga) {
+		this.vaga = vaga;
 	}
 
 	@Override

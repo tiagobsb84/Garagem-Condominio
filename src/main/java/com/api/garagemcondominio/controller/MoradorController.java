@@ -12,7 +12,7 @@ import com.api.garagemcondominio.models.Condominio;
 import com.api.garagemcondominio.repositorieis.CondominioRepository;
 
 @RestController
-@RequestMapping(value = "/garagem-condominio")
+@RequestMapping(value = "/condominio")
 public class MoradorController {
 	
 		@Autowired

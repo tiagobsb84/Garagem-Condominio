@@ -1,7 +1,6 @@
 package com.api.garagemcondominio.dtos;
 
 import java.util.List;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 import com.api.garagemcondominio.models.Condominio;
@@ -14,19 +13,19 @@ public class CondominioDto {
 //	private String sobreNome;
 //	@NotBlank
 //	private String cpf;
-	private UUID id;
+	private Long id;
 	private String apartamento;
 	private String bloco;
-	private String numeroVaga;
+	private String vaga;
 	
 	public CondominioDto(Condominio condominio) {
 		this.id = condominio.getId();
 		this.apartamento = condominio.getApartamento();
 		this.bloco = condominio.getBloco();
-		this.numeroVaga = condominio.getNumeroVaga();
+		this.vaga = condominio.getVaga();
 	}
 	
-	public UUID getId() {
+	public Long getId() {
 		return id;
 	}
 
@@ -38,8 +37,8 @@ public class CondominioDto {
 		return bloco;
 	}
 
-	public String getNumeroVaga() {
-		return numeroVaga;
+	public String getVaga() {
+		return vaga;
 	}
 
 	public static List<CondominioDto> converter(List<Condominio> condominio) {
