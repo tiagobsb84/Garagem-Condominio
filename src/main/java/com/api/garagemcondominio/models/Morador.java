@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Morador implements Serializable {
@@ -16,6 +17,9 @@ public class Morador implements Serializable {
 	private Long id;
 	private String nome;
 	private String cpf;
+	
+	@ManyToOne
+	private Automovel automovel;
 	
 	public Morador() {
 		
@@ -43,5 +47,9 @@ public class Morador implements Serializable {
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
+	}
+	
+	public Automovel getAutomovel() {
+		return automovel;
 	}
 }
